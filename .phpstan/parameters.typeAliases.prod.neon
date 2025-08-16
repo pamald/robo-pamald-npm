@@ -1,9 +1,9 @@
 parameters:
 	typeAliases:
-		robo-pamald-npm-collect-packages-task-options: '''
+		robo-pamald-npm-collect-dependencies-task-options: '''
 			array{
 				assetNamePrefix?: string,
-				collector?: null|\Pamald\PamaldNpm\PackageCollector,
+				collector?: null|\Pamald\PamaldNpm\DependencyCollector,
 				lock?: null|array<string, mixed>,
 				json?: null|array<string, mixed>,
 			}

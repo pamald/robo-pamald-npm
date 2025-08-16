@@ -36,7 +36,7 @@ parameters:
 			path: ../RoboFile.php
 
 		-
-			message: "#^Call to an undefined method Pamald\\\\Robo\\\\PamaldNpm\\\\Task\\\\CollectNpmPackagesTask\\|Robo\\\\Collection\\\\CollectionBuilder\\:\\:setOptions\\(\\)\\.$#"
+			message: "#^Call to an undefined method Pamald\\\\Robo\\\\PamaldNpm\\\\Task\\\\CollectNpmDependenciesTask\\|Robo\\\\Collection\\\\CollectionBuilder\\:\\:setOptions\\(\\)\\.$#"
 			count: 1
 			path: ../tests/AcceptanceRoboFile.php
 
@@ -66,7 +66,7 @@ parameters:
 			path: ../tests/AcceptanceRoboFile.php
 
 		-
-			message: "#^Method AcceptanceRoboFile\\:\\:taskPamaldCollectNpmPackages\\(\\) should return Robo\\\\Collection\\\\CollectionBuilder but returns Pamald\\\\Robo\\\\PamaldNpm\\\\Task\\\\CollectNpmPackagesTask\\|Robo\\\\Collection\\\\CollectionBuilder\\.$#"
+			message: "#^Method AcceptanceRoboFile\\:\\:taskPamaldCollectNpmPackages\\(\\) should return Robo\\\\Collection\\\\CollectionBuilder but returns Pamald\\\\Robo\\\\PamaldNpm\\\\Task\\\\CollectNpmDependenciesTask\\|Robo\\\\Collection\\\\CollectionBuilder\\.$#"
 			count: 1
 			path: ../tests/AcceptanceRoboFile.php
 
@@ -76,7 +76,7 @@ parameters:
 			path: ../tests/AcceptanceRoboFile.php
 
 		-
-			message: "#^PHPDoc tag @return with type Pamald\\\\Robo\\\\PamaldNpm\\\\Task\\\\CollectNpmPackagesTask\\|Robo\\\\Collection\\\\CollectionBuilder is not subtype of native type Robo\\\\Collection\\\\CollectionBuilder\\.$#"
+			message: "#^PHPDoc tag @return with type Pamald\\\\Robo\\\\PamaldNpm\\\\Task\\\\CollectNpmDependenciesTask\\|Robo\\\\Collection\\\\CollectionBuilder is not subtype of native type Robo\\\\Collection\\\\CollectionBuilder\\.$#"
 			count: 1
 			path: ../tests/AcceptanceRoboFile.php
 
@@ -86,7 +86,7 @@ parameters:
 			path: ../tests/AcceptanceRoboFile.php
 
 		-
-			message: "#^Call to an undefined method Pamald\\\\Robo\\\\PamaldNpm\\\\Task\\\\CollectNpmPackagesTask\\|Robo\\\\Collection\\\\CollectionBuilder\\:\\:setOptions\\(\\)\\.$#"
+			message: "#^Call to an undefined method Pamald\\\\Robo\\\\PamaldNpm\\\\Task\\\\CollectNpmDependenciesTask\\|Robo\\\\Collection\\\\CollectionBuilder\\:\\:setOptions\\(\\)\\.$#"
 			count: 1
 			path: ../tests/src/Helper/DummyTaskBuilder.php
 
@@ -101,7 +101,7 @@ parameters:
 			path: ../tests/src/Helper/DummyTaskBuilder.php
 
 		-
-			message: "#^Method Pamald\\\\Robo\\\\PamaldNpm\\\\Tests\\\\Helper\\\\DummyTaskBuilder\\:\\:taskPamaldCollectNpmPackages\\(\\) should return Robo\\\\Collection\\\\CollectionBuilder but returns Pamald\\\\Robo\\\\PamaldNpm\\\\Task\\\\CollectNpmPackagesTask\\|Robo\\\\Collection\\\\CollectionBuilder\\.$#"
+			message: "#^Method Pamald\\\\Robo\\\\PamaldNpm\\\\Tests\\\\Helper\\\\DummyTaskBuilder\\:\\:taskPamaldCollectNpmPackages\\(\\) should return Robo\\\\Collection\\\\CollectionBuilder but returns Pamald\\\\Robo\\\\PamaldNpm\\\\Task\\\\CollectNpmDependenciesTask\\|Robo\\\\Collection\\\\CollectionBuilder\\.$#"
 			count: 1
 			path: ../tests/src/Helper/DummyTaskBuilder.php
 
@@ -111,7 +111,7 @@ parameters:
 			path: ../tests/src/Helper/DummyTaskBuilder.php
 
 		-
-			message: "#^PHPDoc tag @return with type Pamald\\\\Robo\\\\PamaldNpm\\\\Task\\\\CollectNpmPackagesTask\\|Robo\\\\Collection\\\\CollectionBuilder is not subtype of native type Robo\\\\Collection\\\\CollectionBuilder\\.$#"
+			message: "#^PHPDoc tag @return with type Pamald\\\\Robo\\\\PamaldNpm\\\\Task\\\\CollectNpmDependenciesTask\\|Robo\\\\Collection\\\\CollectionBuilder is not subtype of native type Robo\\\\Collection\\\\CollectionBuilder\\.$#"
 			count: 1
 			path: ../tests/src/Helper/DummyTaskBuilder.php
 

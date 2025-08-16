@@ -4,16 +4,19 @@ declare(strict_types = 1);
 
 namespace Pamald\Robo\PamaldNpm\Tests\Unit\Task;
 
-use Pamald\Robo\PamaldNpm\Task\CollectNpmPackagesTask;
+use Pamald\Robo\PamaldNpm\Task\CollectNpmDependenciesTask;
 use Pamald\Robo\PamaldNpm\Task\TaskBase;
 use Pamald\Robo\PamaldNpm\Tests\Helper\DummyTaskBuilder;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\Attributes\Test;
 
-#[CoversClass(CollectNpmPackagesTask::class)]
+/**
+ * @phpstan-import-type RoboPamaldNpmCollectDependenciesTaskOptions from \Pamald\Robo\PamaldNpm\Phpstan
+ */
+#[CoversClass(CollectNpmDependenciesTask::class)]
 #[CoversClass(TaskBase::class)]
-class CollectNpmPackagesTaskTest extends TaskTestBase
+class CollectNpmDependenciesTaskTest extends TaskTestBase
 {
     /**
      * @return resource
@@ -40,7 +43,7 @@ class CollectNpmPackagesTaskTest extends TaskTestBase
                     'exitCode' => 0,
                     'exitMessage' => '',
                     'assets' => [
-                        'pamald.npmPackages' => [
+                        'pamald.npm.dependencies' => [
                             'a' => [],
                             'b' => [],
                         ],
@@ -72,7 +75,7 @@ class CollectNpmPackagesTaskTest extends TaskTestBase
 
     /**
      * @phpstan-param array<string, mixed> $expected
-     * @phpstan-param robo-pamald-npm-collect-packages-task-options $options
+     * @phpstan-param RoboPamaldNpmCollectDependenciesTaskOptions $options
      */
     #[Test]
     #[DataProvider('casesRunSuccess')]
@@ -87,8 +90,8 @@ class CollectNpmPackagesTaskTest extends TaskTestBase
         static::assertSame($expected['exitCode'], $result->getExitCode());
         static::assertSame($expected['exitMessage'], $result->getMessage());
         static::assertSame(
-            array_keys($expected['assets']['pamald.npmPackages']),
-            array_keys($result['pamald.npmPackages']),
+            array_keys($expected['assets']['pamald.npm.dependencies']),
+            array_keys($result['pamald.npm.dependencies']),
         );
     }
 }

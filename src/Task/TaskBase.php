@@ -57,7 +57,7 @@ abstract class TaskBase extends RoboBaseTask
 
     protected function runHeader(): static
     {
-        $this->printTaskInfo('Collect NPM packages');
+        $this->printTaskInfo('Collect NPM dependencies');
 
         return $this;
     }

@@ -4,27 +4,30 @@ declare(strict_types = 1);
 
 namespace Pamald\Robo\PamaldNpm\Task;
 
-use Pamald\PamaldNpm\PackageCollector;
+use Pamald\PamaldNpm\DependencyCollector;
 
-class CollectNpmPackagesTask extends TaskBase
+/**
+ * @phpstan-import-type RoboPamaldNpmCollectDependenciesTaskOptions from \Pamald\Robo\PamaldNpm\Phpstan
+ */
+class CollectNpmDependenciesTask extends TaskBase
 {
 
-    protected string $taskName = 'pamald - Collect NPM packages';
+    protected string $taskName = 'pamald - Collect NPM dependencies';
 
     // region collector
-    protected ?PackageCollector $collector = null;
+    protected ?DependencyCollector $collector = null;
 
-    public function getCollector(): ?PackageCollector
+    public function getCollector(): ?DependencyCollector
     {
         return $this->collector;
     }
 
-    protected function getCollectorFinal(): PackageCollector
+    protected function getCollectorFinal(): DependencyCollector
     {
-        return $this->getCollector() ?: new PackageCollector();
+        return $this->getCollector() ?: new DependencyCollector();
     }
 
-    public function setCollector(?PackageCollector $collector): static
+    public function setCollector(?DependencyCollector $collector): static
     {
         $this->collector = $collector;
 
@@ -85,7 +88,7 @@ class CollectNpmPackagesTask extends TaskBase
     /**
      * {@inheritdoc}
      *
-     * @phpstan-param robo-pamald-npm-collect-packages-task-options $options
+     * @phpstan-param RoboPamaldNpmCollectDependenciesTaskOptions $options
      */
     public function setOptions(array $options): static
     {
@@ -108,14 +111,14 @@ class CollectNpmPackagesTask extends TaskBase
 
     protected function runHeader(): static
     {
-        $this->printTaskInfo('Collect NPM packages');
+        $this->printTaskInfo('Collect NPM dependencies');
 
         return $this;
     }
 
     protected function runDoIt(): static
     {
-        $this->assets['pamald.npmPackages'] = $this
+        $this->assets['pamald.npm.dependencies'] = $this
             ->getCollectorFinal()
             ->collect($this->getLock(), $this->getJson());
 

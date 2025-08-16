@@ -3,7 +3,7 @@
 declare(strict_types = 1);
 
 use Pamald\Pamald\Reporter\ConsoleTableReporter;
-use Pamald\PamaldNpm\PackageCollector;
+use Pamald\PamaldNpm\DependencyCollector;
 use Pamald\Robo\Pamald\PamaldTaskLoader;
 use Pamald\Robo\PamaldNpm\PamaldNpmTaskLoader;
 use Robo\Tasks;
@@ -48,7 +48,7 @@ class AcceptanceRoboFile extends Tasks
                     true,
                 );
 
-                $state['collector'] = new PackageCollector();
+                $state['collector'] = new DependencyCollector();
 
                 $reporter = new ConsoleTableReporter();
                 $reporter->setTable(new Table($this->output()));
@@ -75,8 +75,8 @@ class AcceptanceRoboFile extends Tasks
             ->addTask(
                 $this
                     ->taskPamaldLockDiffer()
-                    ->deferTaskConfiguration('setLeftPackages', 'left.pamald.npmPackages')
-                    ->deferTaskConfiguration('setRightPackages', 'right.pamald.npmPackages')
+                    ->deferTaskConfiguration('setLeftPackages', 'left.pamald.npm.dependencies')
+                    ->deferTaskConfiguration('setRightPackages', 'right.pamald.npm.dependencies')
             )
             ->addTask(
                 $this
